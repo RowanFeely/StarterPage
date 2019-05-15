@@ -28,27 +28,19 @@
                 <div class="bookmark-inner-container">
                     <a class="bookmark" href="https://inbox.google.com/" target="_blank">Inbox</a>
                     <a class="bookmark" href="https://github.com/" target="_blank">Github</a>
-                    <a class="bookmark" href="https://drive.google.com/" target="_blank">Drive</a>
+                    <a class="bookmark" href="https://trello.com/b/gIeUdih7/personal" target="_blank">Trello</a>
                 </div>
             </div>
             <div class="bookmark-set">
                 <div class="bookmark-title">Media</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
-                    <a class="bookmark" href="https://netflix.com" target="_blank">Netflix</a>
-                    <a class="bookmark" href="https://crunchyroll.com" target="_blank">Crunchyroll</a>
-                    <a class="bookmark" href="https://" target="_blank">Amazon Prime</a>
+                    <a class="bookmark" href="https://fmovies.to" target="_blank">FMovies</a>
                 </div>
             </div>
             <div class="bookmark-set">
             <div class="bookmark-title">Reddit</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://reddit.com/r/overwatch" target="_blank">/r/overwatch</a>
-                    <a class="bookmark" href="https://reddit.com/r/pcmasterrace" target="_blank">/r/pcmasterrace</a>
-                    <a class="bookmark" href="https://reddit.com/r/me_irl" target="_blank">/r/me_irl</a>
-                    <a class="bookmark" href="https://reddit.com/r/battlestations" target="_blank">/r/battlestations</a>
                     <a class="bookmark" href="https://reddit.com/r/unixporn" target="_blank">/r/unixporn</a>
-                    
                     <a class="bookmark" href="https://reddit.com/r/news" target="_blank">/r/news</a>
                 </div>
             </div>
@@ -86,13 +78,13 @@
         window.onload = () => {
             let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=4737316&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=2147714&appid=9900eab5f0e2073723150704ad97acb2&units=metric');
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         let json = JSON.parse(xhr.responseText);
                         console.log(json);
-                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " F";
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
                         document.getElementById("weather-description").innerHTML = json.weather[0].description;
                     } else {
                         console.log('error msg: ' + xhr.status);
