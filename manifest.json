@@ -1,11 +1,16 @@
 {
-  "version"     : "2",
-  "name"        : "Nord Homepage",
-  "description" : "A nordic homepage",
+	"version"     : "2",
+	"name"        : "Material Homepage",
+	"description" : "A material styled homepage, aesthetic simplicity.",
 
-  "chrome_settings_overrides": {
-    "homepage": "https://google.com.au"
-  },
-  "manifest_version" : 2
+	"permisions": ["tabs"],
+	"chrome_url_overrides": {
+		"newtab" : "./dashboard.html"
+	},
+	"chrome_settings_overrides": {
+		"homepage": "https://google.com.au",
+		"startup_pages": "./dashboard.html"
+	},
+	"manifest_version" : 2
 }
 
