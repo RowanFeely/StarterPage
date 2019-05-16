@@ -143,5 +143,5 @@ body {
 .bookmark:hover {
     transition: all 1s ease;
     color: #88C0D0;
-    text-shadow: 0px 2px 3px rgba(129, 161, 193, 0.7);
+    text-shadow: 0px 2px 3px rgba(129, 161, 193, 0.3);
 }
