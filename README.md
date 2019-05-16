@@ -1,5 +1,5 @@
 # Preview
-![Preview Image of theme](Preview.jpeg?raw=true "Preview")
+![Preview Image of theme](Dashboard.jpeg?raw=true "Preview")
 
 # Installation
 
