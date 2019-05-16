@@ -1,7 +1,12 @@
-body {
+html {
     font-family: sans-serif;
+    font-size: 25px;
     background-color: #2E3440;
+}
+
+body {
     margin: 0px;
+    font-size: 20px;
 }
 
 .container {
@@ -14,17 +19,18 @@ body {
 }
 
 #clock {
+    color: #D8DEE9;
     font-size: 3.5rem;
     font-weight: 600;
-    color: #fff;
-    margin-bottom: .25em;
+    text-shadow: 0px 3px 6px rgba(15, 17, 21, 0.2) ;
 }
 
 #search {
     width: 100%;
     height: 100vh;
-    background-color: #272727;
+    background-color: #2E3440;
     display: none;
+    margin: 0;
     position: absolute;
     box-sizing: border-box;
     flex-direction: column;
@@ -33,27 +39,40 @@ body {
 }
 
 #search-field {
-    width: 90%;
     padding: .75em 1em;
-    box-sizing: border-box;
-    background-color: #272727;
-    border: solid 0px #272727;
+    background-color: #3B4252;
+    border: 0px;
     font-size: 4rem;
-    color: #f2f2f2;
     outline: none;
     border-radius: 3px;
     margin-bottom: 1em;
     text-align: center;
+    color: #81A1C1;
+}
+
+#weather-icon {
+    height: 30px;
+    vertical-align: text-bottom;
 }
 
 .weather-container {
-    width: 30%;
-    background-color: #272727;
-    padding: 1em;
-    border-radius: 3px;
-    color: #fff;
+    width: 20%;
+    color: #D8DEE9;
+    padding: 0.5em;
+    margin-top: .5em;
+    font-size: 1rem;
     text-align: center;
+    border-radius: 3px;
+    margin-bottom: .5em;
+    background-color: #3B4252;
+    box-shadow: rgba(15, 17, 21, 0.2) 0px 3px 6px 0px;
+    transition: box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
 }
+
+.weather-container:hover{
+    box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;
+}
+
 .inline {
     display: inline-block;
 }
@@ -81,35 +100,48 @@ body {
         width: auto;
         margin: 1em 0em;
     }
+    .weather-container {
+        width: 30%;
+    }
 }
 
 .bookmark-set{
-    padding: 1em;
-    background-color: #4C566A;
+    transition: box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
     box-shadow: rgba(15, 17, 21, 0.2) 0px 3px 6px 0px;
-    border-radius: 3px;
-    font-size: .85rem;
-    width: 25%;
-    height: 10em;
-    margin: 0em .5em;
+    padding: 1rem;
+    background-color: #3B4252;
+    border-radius: 5px;
+    margin: 0em .75em;
+    width: 50%;
 }
+
+.bookmark-set:hover{
+    box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;
+}
+
 .bookmark-inner-container {
     overflow-y: hidden;
     height: 80%;
     vertical-align: top;
+    margin: 0 .5rem 0 0;
 }
+
 .bookmark-title {
+    display: inline;
     font-size: 1.1rem;
     font-weight: 600;
     color: #D8DEE9;
-    margin: 0em 0em .35em 0em;
 }
+
 .bookmark {
+    color: #81A1C1;
     text-decoration: none;
-    color: #D8DEE9;
-    display:block;
+    display: block;
     margin: .5em 0em;
 }
+
 .bookmark:hover {
+    transition: all 1s ease;
     color: #88C0D0;
+    text-shadow: 0px 2px 3px rgba(129, 161, 193, 0.7);
 }

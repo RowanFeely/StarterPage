@@ -3,14 +3,16 @@
 	"name"        : "Material Homepage",
 	"description" : "A material styled homepage, aesthetic simplicity.",
 
-	"permisions": ["tabs"],
+	"permissions": ["tabs"],
 	"chrome_url_overrides": {
 		"newtab" : "./dashboard.html"
 	},
-	"chrome_settings_overrides": {
-		"homepage": "https://google.com.au",
-		"startup_pages": "./dashboard.html"
-	},
+	"content_scripts": [{
+		"matches": ["*://*/_/chrome/newtab*"],
+		"run_at" : "document_end",
+		"js" : ["app.js"]
+	}],
+
 	"manifest_version" : 2
 }
 
