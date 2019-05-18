@@ -22,6 +22,7 @@ App = {
 
   getWeatherIcon: function(iconCode){
     var dayNight = iconCode.slice(2, 3);
+    console.log(dayNight);
     var code = iconCode.slice(0, 2);
     if (dayNight == "d"){
       switch (code){
@@ -94,6 +95,18 @@ App = {
         }
       }
     }
+
+    /* Aus BOM */
+    //xhr.open('GET', "https://api.weather.bom.gov.au/v1/locations/r3gx2f/observations");
+    //xhr.onload = () => {
+    //  if (xhr.readyState === 4) {
+    //    if (xhr.status === 200) {
+    //      let json = JSON.parse(xhr.responseText);
+    //      //var temp = json.main.temp.toFixed(0) + "&deg;C";
+    //    } else {
+    //      console.log('error msg: ' + xhr.status);
+    //    }
+    //}
     xhr.send();
   },
 
