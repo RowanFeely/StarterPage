@@ -12,7 +12,9 @@
 		"run_at" : "document_end",
 		"js" : ["app.js"]
 	}],
-
+	"web_accessible_resources": [
+		"icons/*.png"
+	],
 	"manifest_version" : 2
 }
 
