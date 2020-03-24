@@ -2,8 +2,8 @@
 App = {
   search: function(e) {
     if (e.keyCode == 13) {
-      var val = document.getElementById("search-field").value;
-      window.open("https://google.com/search?q=" + val);
+      var val = document.getElementById('search-field').value;
+      window.open('https://google.com/search?q=' + val);
       document.getElementById('search-field').value = '';
       document.getElementById('search-field').blur();
       document.getElementById('search').style.display = 'none';
@@ -20,81 +20,86 @@ App = {
     });
   },
 
-  getWeatherIcon: function(iconCode){
+  getWeatherIcon: function(iconCode) {
     var dayNight = iconCode.slice(2, 3);
     console.log(dayNight);
     var code = iconCode.slice(0, 2);
-    if (dayNight == "d"){
-      switch (code){
-        case "01":
-          return "icons/sunny.png";
-        case "02":
-          return "icons/partly_cloudy.png";
-        case "03":
-          return "icons/cloudy.png";
-        case "04":
-          return "icons/cloud_s_sunny.png";
-        case "09":
-          return "icons/rain_s_cloudy.png";
-        case "10":
-          return "icons/rain.png";
-        case "11":
-          return "icons/thunderstorms.png";
-        case "13":
-          return "icons/snow.png";
-        case "50":
-          return "icons/mist.png";
+    if (dayNight == 'd') {
+      switch (code) {
+        case '01':
+          return 'icons/sunny.png';
+        case '02':
+          return 'icons/partly_cloudy.png';
+        case '03':
+          return 'icons/cloudy.png';
+        case '04':
+          return 'icons/cloud_s_sunny.png';
+        case '09':
+          return 'icons/rain_s_cloudy.png';
+        case '10':
+          return 'icons/rain.png';
+        case '11':
+          return 'icons/thunderstorms.png';
+        case '13':
+          return 'icons/snow.png';
+        case '50':
+          return 'icons/mist.png';
         default:
           return null;
       }
     } else {
-      switch (code){
-        case "01":
-          return "icons/night.png";
-        case "02":
-          return "icons/night_partly_cloudy.png";
-        case "03":
-          return "icons/cloudy.png";
-        case "04":
-          return "icons/cloudy_night.png";
-        case "09":
-          return "icons/rain_night.png";
-        case "10":
-          return "icons/rain.png";
-        case "11":
-          return "icons/thunderstorms.png";
-        case "13":
-          return "icons/night_snow.png";
-        case "50":
-          return "icons/mist.png";
+      switch (code) {
+        case '01':
+          return 'icons/night.png';
+        case '02':
+          return 'icons/night_partly_cloudy.png';
+        case '03':
+          return 'icons/cloudy.png';
+        case '04':
+          return 'icons/cloudy_night.png';
+        case '09':
+          return 'icons/rain_night.png';
+        case '10':
+          return 'icons/rain.png';
+        case '11':
+          return 'icons/thunderstorms.png';
+        case '13':
+          return 'icons/night_snow.png';
+        case '50':
+          return 'icons/mist.png';
         default:
           return null;
       }
     }
   },
 
-  getWeather: function(){
+  getWeather: function() {
     let xhr = new XMLHttpRequest();
     /* OPEN WEATHER MAP */
-    xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=2147714&appid=9900eab5f0e2073723150704ad97acb2&units=metric');
+    xhr.open(
+      'GET',
+      'https://api.openweathermap.org/data/2.5/weather?id=2158177&appid=2d33137dd0ae28b599bdcedc827a9560&units=metric'
+    );
     xhr.onload = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           let json = JSON.parse(xhr.responseText);
-          var temp = json.main.temp.toFixed(0) + "&deg;C";
+          var temp = json.main.temp.toFixed(0) + '&deg;C';
           var weatherDescription = json.weather[0].description;
           var weatherIcon = App.getWeatherIcon(json.weather[0].icon);
-          if (weatherIcon){
-            document.getElementById("weather").innerHTML = weatherDescription + " - " + temp;
-            document.getElementById("weather-icon").src = weatherIcon;
+          if (weatherIcon) {
+            document.getElementById('weather').innerHTML =
+              weatherDescription + ', ' + temp;
+            document.getElementById('weather-icon').src = weatherIcon;
           } else {
-            document.getElementById("weather").innerHTML = weatherDescription + " - " + temp;
+            document.getElementById('weather').innerHTML =
+              weatherDescription + ' ' + temp;
           }
         } else {
           console.log('error msg: ' + xhr.status);
         }
       }
-    }
+    };
 
     /* Aus BOM */
     //xhr.open('GET', "https://api.weather.bom.gov.au/v1/locations/r3gx2f/observations");
@@ -110,11 +115,11 @@ App = {
     xhr.send();
   },
 
-  init: function(){
+  init: function() {
     /* CLOCK */
-    document.getElementById("clock").innerHTML = App.getTime();
+    document.getElementById('clock').innerHTML = App.getTime();
     setInterval(() => {
-      document.getElementById("clock").innerHTML = App.getTime();
+      document.getElementById('clock').innerHTML = App.getTime();
     }, 30000);
 
     /* Weather */
@@ -122,24 +127,25 @@ App = {
 
     /* EVENT LISTENERS */
     // search when th enter key is pressed
-    var searchField = document.getElementById("search-field");
-    searchField.addEventListener("keypress", (event) => {
+    var searchField = document.getElementById('search-field');
+    searchField.addEventListener('keypress', event => {
       return App.search(event);
     });
 
     // search field shorcut
-    document.addEventListener("keydown", event => {
-      if (event.keyCode == 32) {          // Spacebar code to open search
+    document.addEventListener('keydown', event => {
+      if (event.keyCode == 32) {
+        // Spacebar code to open search
         document.getElementById('search').style.display = 'flex';
         document.getElementById('search-field').focus();
-      } else if (event.keyCode == 27) {   // Esc to close search
+      } else if (event.keyCode == 27) {
+        // Esc to close search
         document.getElementById('search-field').value = '';
         document.getElementById('search-field').blur();
         document.getElementById('search').style.display = 'none';
       }
     });
   }
-}
+};
 
 window.onload = App.init();
-
