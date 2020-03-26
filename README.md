@@ -9,7 +9,7 @@
 Download the theme
 
 ```
-git clone https://github.com/Kevinwochan/homepage.git
+git clone https://github.com/RowanFeely/StaterPage.git
 ```
 
 Launch Google Chrome.
