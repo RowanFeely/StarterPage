@@ -12,11 +12,9 @@ Download the theme
 git clone https://github.com/RowanFeely/StaterPage.git
 ```
 
-Launch Google Chrome.
-Open the Extension Management page by navigating to `chrome://extensions`.
+Launch your preferred browser and navigate to settings.
+Select the option to set your homepage, and input
 
-The Extension Management page can also be opened by clicking on the Chrome menu, hovering over More Tools then selecting Extensions.
-Enable Developer Mode by clicking the toggle switch next to Developer mode.
-Click the LOAD UNPACKED button and select the downloaded directory.
-
-Ta-da! The theme has been successfully installed.
+```
+file:///StarterPage/homepage/dashboard.html
+```
