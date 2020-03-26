@@ -4,8 +4,6 @@
 
 # Installation
 
-## As a developer
-
 Download the theme
 
 ```
