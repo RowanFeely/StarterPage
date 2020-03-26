@@ -38,7 +38,7 @@ body {
 
 #search {
   width: 100%;
-  height: 100vh;
+  height: 81.25vh;
   background-color: #242933;
   display: none;
   margin: 0;
@@ -52,19 +52,19 @@ body {
 #search-field {
   padding: 0.38em 0.5em;
   font-family: 'undefined';
-  background-color: #3b4252;
+  background-color: #2e3440;
   border: 0px;
   font-size: 15px;
   outline: none;
   border-radius: 3px;
   margin-bottom: 0.5em;
-  text-align: center;
-  color: #e5e9f0;
+  text-align: left;
+  color: #eceff4;
 }
 
 #weather-icon {
-  height: 28px;
-  vertical-align: middle;
+  height: 26px;
+  vertical-align: bottom;
   opacity: 0.6;
 }
 
@@ -72,7 +72,7 @@ body {
   font-family: 'undefined';
   width: 28%;
   min-width: fit-content;
-  color: #434c5e;
+  color: rgba(120, 128, 143, 0.6);
   padding: 0.5em 1em;
   margin-top: 0px;
   font-size: 18px;
@@ -85,8 +85,8 @@ body {
   background-color 400ms ease-in-out 0s; */
 }
 
-#weather-container:hover {
-  /*box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;*/
+/*#weather-container:hover {
+  box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;*/
 }
 
 .inline {
@@ -98,9 +98,10 @@ body {
   flex-direction: row;
   justify-content: center;
   width: 50%;
-  text-align: center;
+  text-align: left;
   margin: 1em 0em;
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 960px) {
@@ -128,10 +129,10 @@ body {
   box-shadow: rgba(15, 17, 21, 0.2) 0px 3px 6px 0px;
   padding: 1rem;
   background-color: #2e3440;
-  border-radius: 5px;
+  border-radius: 3px;
   margin: 0em 0.75em;
   width: 50%;
-  transition: 550ms ease-in 0.25s;
+  transition: 450ms ease-in 0.25s;
 }
 
 .bookmark-set:hover {
@@ -149,13 +150,13 @@ body {
 
 .bookmark-title {
   display: inline;
-  font-size: 15px;
+  font-size: 17.5px;
   font-weight: 250;
   color: #d8dee9;
 }
 
 .bookmark {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #81a1c1;
   text-decoration: none;
   font-weight: 100;
@@ -171,7 +172,7 @@ body {
 #waveform-collage {
   position: fixed;
   bottom: 0;
-  z-index: -1;
+  z-index: 2;
 }
 #waveform-1 {
   fill: #434c5e;
@@ -245,6 +246,9 @@ body {
 @keyframes fadeInIconOpacity {
   0% {
     opacity: 0;
+  }
+  70% {
+    opacity: 1;
   }
   100% {
     opacity: 0.6;

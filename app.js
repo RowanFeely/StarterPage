@@ -33,7 +33,7 @@ App = {
         case '03':
           return 'icons/cloudy.png';
         case '04':
-          return 'icons/cloud_s_sunny.png';
+          return 'icons/cloudy_s_sunny.png';
         case '09':
           return 'icons/rain_s_cloudy.png';
         case '10':
@@ -84,16 +84,16 @@ App = {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           let json = JSON.parse(xhr.responseText);
-          var temp = json.main.temp.toFixed(0) + '&deg;C';
+          var temp = json.main.feels_like.toFixed(0) + '&deg;C';
           var weatherDescription = json.weather[0].description;
           var weatherIcon = App.getWeatherIcon(json.weather[0].icon);
           if (weatherIcon) {
             document.getElementById('weather').innerHTML =
-              weatherDescription + ', ' + temp;
+              weatherDescription + ', feels like ' + temp;
             document.getElementById('weather-icon').src = weatherIcon;
           } else {
             document.getElementById('weather').innerHTML =
-              weatherDescription + ' ' + temp;
+              weatherDescription + '  ' + temp;
           }
         } else {
           console.log('error msg: ' + xhr.status);
