@@ -63,7 +63,8 @@ body {
 }
 
 #weather-icon {
-  height: 26px;
+  height: 30px;
+  width: 33px;
   vertical-align: bottom;
   opacity: 0.6;
 }
@@ -85,9 +86,9 @@ body {
   background-color 400ms ease-in-out 0s; */
 }
 
-/*#weather-container:hover {
-  box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;*/
-}
+/* #weather-container:hover {
+  box-shadow: rgba(15, 17, 21, 0.2) 0px 10px 20px 2px;
+} */
 
 .inline {
   display: inline-block;
@@ -132,7 +133,7 @@ body {
   border-radius: 3px;
   margin: 0em 0.75em;
   width: 50%;
-  transition: 450ms ease-in 0.25s;
+  transition: 450ms ease-in 0.1s;
 }
 
 .bookmark-set:hover {
@@ -165,7 +166,7 @@ body {
 }
 
 .bookmark:hover {
-  color: #8fbcbb;
+  color: #88c0d0;
   transition: all 400ms ease-in-out 0s;
 }
 
