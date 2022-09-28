@@ -7,7 +7,7 @@
 Download the theme
 
 ```
-git clone https://github.com/RowanFeely/StaterPage.git
+git clone https://github.com/RowanFeely/StarterPage.git
 ```
 
 Launch your preferred browser and navigate to settings.
